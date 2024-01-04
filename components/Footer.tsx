@@ -15,7 +15,7 @@ export const Footer = () => {
             className="object-contain"
           />
           <p className="text-base text-gray-700">
-            Carhub 2023 <br /> Made by frakoDev &copy;
+            Carhub 2024 <br /> Made by frakoDev &copy;
           </p>
         </div>
         <div className="footer__links">
