@@ -1,5 +1,6 @@
 import { CarProps } from "@/types";
 
+/* ----------------------- OBTENER DATA DE LOS CARROS ----------------------- */
 export async function fetchCars() {
   const headers = {
     "X-RapidAPI-Key": "0229691c87mshb7d127bb01302fep12e2dejsn35dd09ade5c3",
@@ -18,6 +19,10 @@ export async function fetchCars() {
   return result;
 }
 
+/* --------------------- OBTENER IMÁGENES DE LOS CARROS --------------------- */
+//
+
+/* ---------------------- CALCULAR EL COSTO DE LA RENTA --------------------- */
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // Base rental price per day in dollars
   const mileageFactor = 0.1; // Additional rate per mile driven
@@ -59,22 +64,4 @@ export const deleteSearchParams = (type: string) => {
   }?${newSearchParams.toString()}`;
 
   return newPathname;
-};
-
-export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-  const url = new URL("https://cdn.imagin.studio/getimage");
-  const { make, model, year } = car;
-
-  url.searchParams.append(
-    "customer",
-    process.env.NEXT_PUBLIC_IMAGIN_API_KEY || ""
-  );
-  url.searchParams.append("make", make);
-  url.searchParams.append("modelFamily", model.split(" ")[0]);
-  url.searchParams.append("zoomType", "fullscreen");
-  url.searchParams.append("modelYear", `${year}`);
-  // url.searchParams.append('zoomLevel', zoomLevel);
-  url.searchParams.append("angle", `${angle}`);
-
-  return `${url}`;
 };

@@ -1,5 +1,6 @@
 {
-    "editor.stickyScroll.enabled": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.stickyScroll.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.inlayHints.parameterNames.enabled": "none"
 }
